@@ -481,7 +481,7 @@ xmlSecPtrListEnsureSize(xmlSecPtrListPtr list, xmlSecSize size) {
             newSize = size + 8;
             break;
         case xmlSecAllocModeDouble:
-            newSize = 2 * size + 32;
+            newSize = size / 2 + 32;
             break;
     }
 

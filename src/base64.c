@@ -583,7 +583,7 @@ static xmlSecSize
 xmlSecBase64GetEncodeSize(xmlSecSize columnsSize, xmlSecSize inSize) {
     xmlSecSize size;
 
-    size = (4 * inSize) / 3 + 4;
+    size = (4 * inSize) / 3 + 1;
     if(columnsSize > 0) {
         size += (size / columnsSize) + 4;
     }

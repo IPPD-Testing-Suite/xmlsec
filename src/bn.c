@@ -367,7 +367,7 @@ xmlSecBnToString(xmlSecBnPtr bn, xmlSecSize base) {
      *      len = 8 * <bn size>
      */
     len = 8 * size + 1 + 1;
-    res = (xmlChar*)xmlMalloc(len + 1);
+    res = (xmlChar*)xmlMalloc(len);
     if(res == NULL) {
         xmlSecMallocError(len + 1, NULL);
         xmlSecBnFinalize(&bn2);

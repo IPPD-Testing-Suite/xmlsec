@@ -129,11 +129,10 @@ void
 xmlSecBufferFinalize(xmlSecBufferPtr buf) {
     xmlSecAssert(buf != NULL);
 
-    xmlSecBufferEmpty(buf);
-
     if(buf->data != 0) {
         xmlFree(buf->data);
     }
+    xmlSecBufferEmpty(buf);
     buf->data = NULL;
     buf->size = buf->maxSize = 0;
 }
@@ -428,7 +427,7 @@ int
 xmlSecBufferRemoveHead(xmlSecBufferPtr buf, xmlSecSize size) {
     xmlSecAssert2(buf != NULL, -1);
 
-    if(size < buf->size) {
+    if(size > buf->size) {
         xmlSecAssert2(buf->data != NULL, -1);
 
         buf->size -= size;
